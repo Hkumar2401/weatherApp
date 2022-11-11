@@ -20,12 +20,13 @@ weatherData = (cityName) =>{
 
 
 // function to show weather to the user
-showWeather = (city, status, imageOfIcon, temp, temp_min, temp_max) =>{
+showWeather = (city, status, imageOfIcon, temp, temp_min, temp_max, humidity, visibility, windSpeed, pressure) =>{
 
     
     let celsius = "॰C";
     let image = document.querySelector("#icon");
     image.setAttribute("src", imageOfIcon);
+
 
     document.body.querySelector("#city").textContent = city;
 
@@ -34,6 +35,11 @@ showWeather = (city, status, imageOfIcon, temp, temp_min, temp_max) =>{
     document.body.querySelector("#temp").textContent = temp + celsius;
     document.body.querySelector("#temp-max").textContent = temp_max + celsius;
     document.body.querySelector("#temp-min").textContent = temp_min + celsius;
+    
+    document.querySelector("#humidity").textContent = humidity + " %";
+    document.querySelector("#visibility").textContent = (visibility/1000) + " km";
+    document.querySelector("#wind-speed").textContent = windSpeed + " m/s";
+    document.querySelector("#pressure").textContent = pressure + " hPa";
     
 }
 
@@ -49,12 +55,16 @@ searchCity = () =>{
     data.then((res)=>{
 
         let city = res.name;
-        let status = res.weather[0].main;
+        let status = res.weather[0].description;
         let icon = res.weather[0].icon;
+        let humidity = res.main.humidity;
+        let visibility = res.visibility;
+        let windSpeed = res.wind.speed;
+        let pressure = res.main.pressure;
         let imageOfIcon = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
         let {temp, temp_min, temp_max} = res.main;
-        showWeather(city, status, imageOfIcon, temp, temp_min, temp_max);
+        showWeather(city, status, imageOfIcon, temp, temp_min, temp_max, humidity, visibility, windSpeed, pressure);
     })
     
 }
