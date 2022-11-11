@@ -4,7 +4,7 @@ let apiAddress = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 
 
-// url to acces weather api - https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=7a61001b7ecd507d98d7c4b8b87e788d
+// url to acces weather api - https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid={your_api_id}
 
 // function to access data from api and returning it to function
 weatherData = (cityName) => {
