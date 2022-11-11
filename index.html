@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="head">
+            <h1 id="heading" class="">Weather</h1>
+        </div>
+
+        <div class="input">
+            <input type="text" name="" id="input-text" class="" placeholder="Enter City" autocomplete="off">
+
+            <button class="btn btn-outline-dark search-button btn-lg" onclick="searchCity()">Search</button>
+        </div>
+
+
+        <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+                <h4 class="my-0 fw-normal" id="city">City</h4>
+            </div>
+            <div class="card-body">
+                <h1 class="card-title fw-normal" id="status">----</h1>
+                <img src="" alt="" id="icon">
+                <ul class="list-unstyled mt-5 mb-5 fs-3 ">
+                    <li class="lh-4">Temp : <span id="temp">---</span></li>
+                    <li class="lh-4">Max Temp : <span id="temp-max">---</span></li>
+                    <li class="lh-4">Min Temp : <span id="temp-min">---</span></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
